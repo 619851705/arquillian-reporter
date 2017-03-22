@@ -1,0 +1,313 @@
+[
+  {
+    "start": "2017-03-20 10:49:49.498",
+    "stop": "2017-03-20 10:49:55.373",
+    "configuration": {
+      "name": {
+        "value": "Test suite configuration",
+        "description": "Report section containing all configuration related to the whole test suite",
+        "icon": ""
+      },
+      "entries": [],
+      "subReports": [
+        {
+          "name": {
+            "value": "containers"
+          },
+          "entries": [],
+          "subReports": [
+            {
+              "name": {
+                "value": "Container report",
+                "description": "Report of a container"
+              },
+              "entries": [
+                {
+                  "key": {
+                    "value": "Container name",
+                    "description": "Name of the container"
+                  },
+                  "value": {
+                    "content": {
+                      "value": "chameleon"
+                    }
+                  }
+                }
+              ],
+              "subReports": [
+                {
+                  "name": {
+                    "value": "Container configuration",
+                    "description": "Configuration information of the container"
+                  },
+                  "entries": [
+                    {
+                      "key": {
+                        "value": "jbossHome"
+                      },
+                      "value": {
+                        "content": {
+                          "value": "/home/mjobanek/arquillian/arquillian-reporter/arquillian-core-reporter/arquillian-core-reporter-impl/target/server/wildfly-dist_10.0.0.Final/./wildfly-10.0.0.Final"
+                        }
+                      }
+                    }
+                  ],
+                  "subReports": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "testClassReports": [
+      {
+        "start": "2017-03-20 10:49:53.608",
+        "stop": "2017-03-20 10:49:55.214",
+        "configuration": {
+          "name": {
+            "value": "Test class configurations",
+            "description": "Report section containing all configuration related to test class",
+            "icon": ""
+          },
+          "entries": [],
+          "subReports": [
+            {
+              "name": {
+                "value": "deployments"
+              },
+              "entries": [],
+              "subReports": [
+                {
+                  "name": {
+                    "value": "Deployment report",
+                    "description": "Report of a deployment"
+                  },
+                  "entries": [
+                    {
+                      "key": {
+                        "value": "Deployment name",
+                        "description": "Name of the deployment"
+                      },
+                      "value": {
+                        "content": {
+                          "value": "_DEFAULT_"
+                        }
+                      }
+                    },
+                    {
+                      "key": {
+                        "value": "Archive name",
+                        "description": "Name of the archive of a deployment"
+                      },
+                      "value": {
+                        "content": {
+                          "value": "d391c444-0768-415a-a3fa-d9b9593d0de7.war"
+                        }
+                      }
+                    },
+                    {
+                      "key": {
+                        "value": "Deployment order",
+                        "description": "Number specifying an order the deployment is being deployed"
+                      },
+                      "value": {
+                        "content": {
+                          "value": "-1"
+                        }
+                      }
+                    },
+                    {
+                      "key": {
+                        "value": "Deployment protocol",
+                        "description": "Protocol used for a deployment"
+                      },
+                      "value": {
+                        "content": {
+                          "value": "_DEFAULT_"
+                        }
+                      }
+                    }
+                  ],
+                  "subReports": []
+                }
+              ]
+            }
+          ]
+        },
+        "testMethodReports": [
+          {
+            "start": "2017-03-20 10:49:54.848",
+            "stop": "2017-03-20 10:49:55.60",
+            "status": "PASSED",
+            "failureReport": {
+              "name": {
+                "value": "Test method failures",
+                "description": "Report section containing information about failures of the test and possible causes",
+                "icon": ""
+              },
+              "entries": [],
+              "subReports": []
+            },
+            "configuration": {
+              "name": {
+                "value": "Test Method configuration",
+                "description": "Report section containing all configuration related to test method",
+                "icon": ""
+              },
+              "entries": [],
+              "subReports": []
+            },
+            "name": {
+              "value": "runTest"
+            },
+            "entries": [
+              {
+                "key": {
+                  "value": "Operates on deployment",
+                  "description": "Name of a deployment the test method is run against"
+                },
+                "value": {
+                  "content": {
+                    "value": "_DEFAULT_"
+                  }
+                }
+              },
+              {
+                "key": {
+                  "value": "Runs as client",
+                  "description": "If the test method runs as client"
+                },
+                "value": {
+                  "content": {
+                    "value": "false"
+                  }
+                }
+              },
+              {
+                "key": {
+                  "value": "Report message",
+                  "description": "Report message of the test method retrieved from an annotation"
+                },
+                "value": {
+                  "content": {}
+                }
+              }
+            ],
+            "subReports": []
+          }
+        ],
+        "name": {
+          "value": "org.arquillian.core.reporter.SimpleTest"
+        },
+        "entries": [
+          {
+            "key": {
+              "value": "Report message",
+              "description": "Report message of the test class retrieved from an annotation"
+            },
+            "value": {
+              "content": {}
+            }
+          }
+        ],
+        "subReports": []
+      },
+      {
+        "start": "2017-03-20 10:49:55.216",
+        "stop": "2017-03-20 10:49:55.231",
+        "configuration": {
+          "name": {
+            "value": "Test class configurations",
+            "description": "Report section containing all configuration related to test class",
+            "icon": ""
+          },
+          "entries": [],
+          "subReports": []
+        },
+        "testMethodReports": [
+          {
+            "start": "2017-03-20 10:49:55.219",
+            "stop": "2017-03-20 10:49:55.227",
+            "status": "PASSED",
+            "failureReport": {
+              "name": {
+                "value": "Test method failures",
+                "description": "Report section containing information about failures of the test and possible causes",
+                "icon": ""
+              },
+              "entries": [],
+              "subReports": []
+            },
+            "configuration": {
+              "name": {
+                "value": "Test Method configuration",
+                "description": "Report section containing all configuration related to test method",
+                "icon": ""
+              },
+              "entries": [],
+              "subReports": []
+            },
+            "name": {
+              "value": "runTest"
+            },
+            "entries": [
+              {
+                "key": {
+                  "value": "Operates on deployment",
+                  "description": "Name of a deployment the test method is run against"
+                },
+                "value": {
+                  "content": {
+                    "value": "_DEFAULT_"
+                  }
+                }
+              },
+              {
+                "key": {
+                  "value": "Runs as client",
+                  "description": "If the test method runs as client"
+                },
+                "value": {
+                  "content": {
+                    "value": "false"
+                  }
+                }
+              },
+              {
+                "key": {
+                  "value": "Report message",
+                  "description": "Report message of the test method retrieved from an annotation"
+                },
+                "value": {
+                  "content": {}
+                }
+              }
+            ],
+            "subReports": []
+          }
+        ],
+        "name": {
+          "value": "org.arquillian.core.reporter.SecondSimpleTest"
+        },
+        "entries": [
+          {
+            "key": {
+              "value": "Report message",
+              "description": "Report message of the test class retrieved from an annotation"
+            },
+            "value": {
+              "content": {}
+            }
+          }
+        ],
+        "subReports": []
+      }
+    ],
+    "name": {
+      "value": "Test suite name"
+    },
+    "entries": [],
+    "subReports": []
+  }
+]
