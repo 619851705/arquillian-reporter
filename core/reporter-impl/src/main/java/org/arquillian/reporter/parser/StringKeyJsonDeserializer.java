@@ -17,9 +17,13 @@ public class StringKeyJsonDeserializer implements JsonDeserializer<StringKey> {
     @Override
     public StringKey deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
         throws JsonParseException {
+
         JsonObject jsonStringKey = (JsonObject) json;
-        return new ParsedStringKey(jsonStringKey.get("value").getAsString(),
-                                   jsonStringKey.get("description").getAsString(),
-                                   jsonStringKey.get("icon").getAsString());
+        JsonElement value = jsonStringKey.get("value");
+        JsonElement description = jsonStringKey.get("description");
+        JsonElement icon = jsonStringKey.get("icon");
+        return new ParsedStringKey(value != null ? value.getAsString() : "",
+                                   description != null ? description.getAsString() : "",
+                                   icon != null ? icon.getAsString() : "");
     }
 }

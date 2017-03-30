@@ -7,7 +7,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import org.arquillian.reporter.api.model.StringKey;
-import org.arquillian.reporter.api.model.report.BasicReport;
 import org.arquillian.reporter.api.model.report.ConfigurationReport;
 import org.arquillian.reporter.api.model.report.FailureReport;
 import org.arquillian.reporter.api.model.report.Report;
@@ -25,30 +24,16 @@ import static org.arquillian.reporter.parser.ReportJsonParser.prepareGsonParser;
 /**
  * @author <a href="mailto:mjobanek@redhat.com">Matous Jobanek</a>
  */
-public class ReportJsonDeserializer implements JsonDeserializer<Report> {
+public class TestMethodReportJsonDeserializer implements JsonDeserializer<TestMethodReport> {
 
     @Override
-    public Report deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+    public TestMethodReport deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
         throws JsonParseException {
 
         JsonObject jsonReport = (JsonObject) json;
 
-        if (jsonReport.get("testSuiteReports") != null) {
-            return parseExecutionReport(jsonReport);
-
-        } else if (jsonReport.get("testClassReports") != null) {
-            return parseTestSuiteReport(jsonReport);
-
-        } else if (jsonReport.get("testClassReports") != null) {
-            return parseTestClassReport(jsonReport);
-
-        } else if (jsonReport.get("start") != null) {
             return parseTestMethodReport(jsonReport);
 
-        } else {
-            BasicReport basicReport = new BasicReport();
-            return setDefaultValues(basicReport, jsonReport);
-        }
     }
 
     private Report parseExecutionReport(JsonObject jsonReport){
@@ -82,16 +67,17 @@ public class ReportJsonDeserializer implements JsonDeserializer<Report> {
         return setDefaultValues(testClassReport, jsonReport);
     }
 
-    private Report parseTestMethodReport(JsonObject jsonReport){
+    private TestMethodReport parseTestMethodReport(JsonObject jsonReport){
         TestMethodReport testClassReport = new TestMethodReport();
 
-        JsonElement failureReportJson = jsonReport.get("failureReport");
+        JsonObject failureReportJson = jsonReport.get("failureReport").getAsJsonObject();
         if (failureReportJson != null) {
             testClassReport.setFailureReport(prepareGsonParser().fromJson(failureReportJson, FailureReport.class));
         }
 
         setConfigurationStartAndStop(testClassReport, jsonReport);
-        return setDefaultValues(testClassReport, jsonReport);
+        setDefaultValues(testClassReport, jsonReport);
+        return  testClassReport;
     }
 
     private void setConfigurationStartAndStop(WithConfigurationReport report, JsonObject jsonReport) {
